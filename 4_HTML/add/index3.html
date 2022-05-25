@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOW-TO: Программа на Python, Часть 3</title>
+</head>
+<body>
+    <img align="right" src="Icon-Python.png" alt="Логотип Python" title="Логотип языка программирования Python">
+    <h1>HOW-TO: Программа на Python, Часть 3</h1>
+    <ul>
+        <li><em><a href="index1.html">Программа на Python — часть 1</a></em></li>
+        <li><em><a href="index2.html"> Программа на Python — часть 2</a></em></li>
+        <li><em><a href="index3.html">Программа на Python — часть 3</a></em></li>
+    </ul>
+    <h2 id="menu">Содержание</h2>
+    <h3> HOW-TO: Программа на Python, Часть 3</h3>
+    <ul>
+        <li><a href="#Modules">Модули</a></li>
+        <li><a href="#Functions">Функции</a></li>
+    </ul>
+    <hr>
+        <p>В прошлый раз мы изучали списки, подстановку переменных, комментарии, сравнение и<br> 
+        присвоение, операторы <strong>if</strong> и <strong>while</strong>. Я обещал, что в этой части мы изучим модули и<br> 
+        функции. Давайте начнём.</p>
+    <h2 id="Modules">Модули</h2>
+    <a href="#menu">К содержанию</a>  
+    <p> Модули предлагают способ расширить программирование на Python. Вы можете создать<br>
+        свои модули, использовать те, которые поставляются с Python или которые написали<br> 
+        другие. В самом Python есть сотни модулей, которые облегчают написание программ.<br> 
+        Список модулей, поставляемых с Python, находится по адресу:<br> 
+        <em><a href="http://docs.python.org/modindex.html">http://docs.python.org/modindex.html.</a></em> Некоторые модули предназначены для определённых<br> 
+        операционных систем, но большинство из них кроссплатформенные и работают<br> 
+        одинаково на <a href="https://ru.wikipedia.org/wiki/Linux">Linux</a>, <a href="https://ru.wikipedia.org/wiki/Macintosh">Mac</a> и <a href="https://ru.wikipedia.org/wiki/Windows">Microsoft Windows</a>. Для использования внешнего модуля<br> 
+        необходимо импортировать его в программу. Один из модулей, поставляемых с Python,<br> 
+        называется «random». Он даёт возможность генерировать псевдослучайные числа. Мы<br> 
+        используем этот модуль в нашем первом примере.
+        </p>
+            <p>&nbsp; <br>
+            <code>&#35;=======================================<br>
+                &#35;&nbsp;random_example.py<br>
+                &#35;&nbsp;Module example using the random module<br>
+                &#35;=======================================<br>
+                import random<br>
+                &#35;&nbsp;print 14 random integers<br>
+                for cntr in range(1,15):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print random.randint(1,10)</code></p>
+            <p> Давайте разберём код по строкам. Первые четыре строки — это комментарии, о которых<br> 
+                мы говорили в прошлый раз. Пятая строка говорит Python, что нужно использовать<br> 
+                модуль «random». Мы должны явно указать Python на это.</p>
+                <hr>
+        <h2 id="Functions">Функции</h2>
+        <a href="#menu">К содержанию</a>
+        <p> Когда мы импортировали модуль random, мы использовали функцию <strong>randint()</strong>. Функция<br> 
+            &mdash; это блок кода, который создан для того, чтобы вызывать его в программе, обычно,<br> 
+            более одного раза. Это упрощает работу над программой и предотвращает набор одного и<br> 
+            того же кода снова и снова. Грубо говоря, если вам нужно написать некоторый код<br> 
+            больше, чем 1-2 раза, стоит сделать его функцией. Хотя следующие два примера очень<br> 
+            простые, это хорошие примеры функций. Теперь мы хотим, скажем, взять два числа,<br> 
+            сложить их, перемножить, вычесть одно из другого, затем вывести на экран эти числа и<br> 
+            результаты одновременно. Допустим, нам нужно сделать это три раза для трёх наборов<br> 
+            чисел. Тогда наш пример будет выглядеть как код ниже.</p>
+            <p><KBD>&#35;silly example<br>
+                print '%d + %d = %d ' % (1,2,1+2)<br>
+                print '%d * %d = %d ' % (1,2,1*2)<br>
+                print '%d - %d = %d ' % (1,2,1-2)<br>
+                &nbsp; <br>
+                print '\n'<br>
+                print '%d + %d = %d ' % (1,4,1+4)<br>
+                print '%d * %d = %d ' % (1,4,1*4)<br>
+                print '%d - %d = %d ' % (1,4,1-4)<br>
+                &nbsp; <br>
+                print '\n'<br>
+                print '%d + %d = %d ' % (10,5,10+5)<br>
+                print '%d * %d = %d ' % (10,5,10*5)<br>
+                print '%d - %d = %d ' % (10,5,10-5)<br>
+                print '\n'</KBD></p>
+            <p> Здесь нужно не только набрать много текста, но и непременно возникнут ошибки как при<br> 
+                написании, так и при внесении изменений. Вместо этого мы создадим функцию, которую<br> 
+                назовём <strong>«DoTwo»</strong>. Она будет каждый раз брать два числа, проводить математические<br> 
+                операции и выводить результат. Начнём с ключевого слова <strong>«def»</strong>, которое сигнализирует<br> 
+                о том, что мы собираемся определить функцию. После слова <strong>«def»</strong> добавим название<br> 
+                функции и список параметров, если таковые имеются, в круглых скобках. Эту строку<br> 
+                необходимо завершить двоеточием. Код функции набирается с отступом. Наш<br> 
+                улучшенный простой пример <u>(№2)</u> показан ниже.</p>
+            <p><KBD>&#35;silly example 2...still silly, but better<br>
+                def DoTwo(num1,num2):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print '%d + %d = %d ' % (num1,num2,num1+num2)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print '%d * %d = %d ' % (num1,num2,num1*num2)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print '%d - %d = %d ' % (num1,num2,num1-num2)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print '\n'<br>
+                DoTwo(1,2)<br>
+                DoTwo(1,4)<br>
+                DoTwo(10,5)</KBD></p>
+                <p>Как видите, здесь написано меньше кода &mdash; 8 строк вместо 12. Если нам нужно будет что&ndash;<br>либо поменять в функции, мы сможем сделать это, не создавая проблем для нашей<br> 
+                    программы. Чтобы вызвать функцию, нужно написать её имя и параметры.</p>
+                    <table width="100%">
+                        <tr>
+                            <td align="left">
+                                <button type="button">
+                                   <a href="index2.html"><svg width="103.33333" height="73.33333" xmlns="http://www.w3.org/2000/svg" xmlns:undefined="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:undefined="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs id="defs550">
+                                     <linearGradient id="linearGradient834">
+                                      <stop stop-opacity="0.4" stop-color="#ffffff" id="stop835" offset="0"/>
+                                      <stop stop-opacity="0.1" stop-color="#ffffff" id="stop836" offset="1"/>
+                                     </linearGradient>
+                                     <linearGradient id="linearGradient837" xlink:href="#linearGradient834"/>
+                                    </defs>Clipart by Nicu Buculei - arrow08_4Nicu Buculei
+                                    <g>
+                                     <title>Переход на предыдущую страницу</title>
+                                     <desk>Перейти на предыдущую страницу</desk>
+                                     <g stroke="null" id="svg_1">
+                                      <path stroke="null" fill="#000000" stroke-width="3.75" fill-rule="evenodd" fill-opacity="0.25"  id="path833" d="m41.37732,64.79147c0.1231,-0.00394 0.22569,-0.02265 0.31337,-0.05529c2.80564,-1.04446 -1.50808,-12.53131 -1.50809,-12.53131c0,0 43.80945,0.69661 45.75182,-0.17377c1.94237,-0.87038 1.95216,-21.0367 0.00979,-21.90708c-1.94237,-0.87038 -45.75672,-0.17377 -45.75672,-0.17377c0,0 4.31862,-11.4908 1.51298,-12.53526c-2.74533,-1.022 -23.45448,12.29069 -23.73767,23.30121l-0.00979,0c-0.01392,0.23952 -0.00133,0.48081 0.0049,0.72273c0.27415,10.65888 19.68808,23.47203 23.41941,23.35255z"/>
+                                      <path stroke="#000000" stroke-linejoin="round" stroke-width="10" fill-rule="evenodd" fill="#0000ff"  id="path831" d="m38.92383,63.47323c0.1231,-0.00394 0.22569,-0.02265 0.31337,-0.05529c2.80564,-1.04446 -1.50808,-12.53131 -1.50809,-12.53131c0,0 43.80945,0.69661 45.75182,-0.17377c1.94237,-0.87038 1.95216,-21.0367 0.00979,-21.90708c-1.94237,-0.87038 -45.75672,-0.17377 -45.75672,-0.17377c0,0 4.31862,-11.4908 1.51298,-12.53526c-2.74533,-1.022 -23.45448,12.29069 -23.73767,23.30121l-0.00979,0c-0.01392,0.23952 -0.00133,0.48081 0.0049,0.72273c0.27415,10.65888 19.68808,23.47203 23.41941,23.35255z"/>
+                                      <path stroke="null" stroke-width="1.0000000pt" fill-rule="evenodd" fill="url(#linearGradient837)"  id="path838" d="m38.96693,16.79228c-2.58982,-0.69631 -23.74005,12.88165 -22.66096,23.84846c1.07909,10.96681 20.28695,22.45585 21.79768,21.93362c2.80564,-0.87038 -0.43164,-9.74827 -1.51073,-12.01127c0.43164,-1.04446 -0.86327,-8.87789 13.38075,-9.22605c-15.97058,-4.17783 -12.08584,-11.66311 -13.59657,-12.5335c1.94237,-5.04821 3.23728,-10.96681 2.58982,-12.01127z"/>
+                                     </g>
+                                    </g></svg>      
+                                    </a>
+                                </button>
+                            </td>
+                            <td align="center">
+                                <button type="button">
+                                     <a href="#menu"><svg width="73.33333" height="103.33333" xmlns="http://www.w3.org/2000/svg" xmlns:undefined="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:undefined="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <defs id="defs550">
+                                         <linearGradient id="linearGradient834">
+                                          <stop stop-opacity="0.4" stop-color="#ffffff" id="stop835" offset="0"/>
+                                          <stop stop-opacity="0.1" stop-color="#ffffff" id="stop836" offset="1"/>
+                                         </linearGradient>
+                                         <linearGradient id="linearGradient837" xlink:href="#linearGradient834"/>
+                                        </defs>Clipart by Nicu Buculei - arrow08_4Nicu Buculei
+                                        <g>
+                                         <title>Переход к содержанию</title>
+                                         <desk>Перейти к содержанию</desk>
+                                         <g stroke="null" id="g836">
+                                          <path stroke="null" fill="#000000" stroke-width="3.75" fill-rule="evenodd" fill-opacity="0.25"  id="path833" d="m67.08941,43.23133c-0.00464,0.12295 -0.02664,0.22542 -0.06503,0.31299c-1.22843,2.80228 -14.73859,-1.50628 -14.73859,-1.50628c0,0 0.81931,43.757 -0.20438,45.69704c-1.02369,1.94004 -24.74212,1.94982 -25.76582,0.00978c-1.02369,-1.94004 -0.20438,-45.70193 -0.20438,-45.70193c0,0 -13.5148,4.31345 -14.74323,1.51117c-1.20202,-2.74204 14.45558,-23.4264 27.4055,-23.70925l0,-0.00978c0.28171,-0.0139 0.56551,-0.00132 0.85004,0.00489c12.53635,0.27382 27.60642,19.66451 27.46589,23.39137z"/>
+                                          <path stroke="#000000" stroke-linejoin="round" stroke-width="10" fill-rule="evenodd" fill="#0000ff"  id="path831" d="m64.9127,41.16781c-0.00464,0.12295 -0.02664,0.22542 -0.06503,0.31299c-1.22843,2.80228 -14.73859,-1.50628 -14.73859,-1.50628c0,0 0.81931,43.757 -0.20438,45.69704c-1.02369,1.94004 -24.74212,1.94982 -25.76582,0.00978c-1.02369,-1.94004 -0.20438,-45.70193 -0.20438,-45.70193c0,0 -13.5148,4.31345 -14.74323,1.51117c-1.20202,-2.74204 14.45558,-23.4264 27.4055,-23.70925l0,-0.00978c0.28171,-0.0139 0.56551,-0.00132 0.85004,0.00489c12.53635,0.27382 27.60642,19.66451 27.46589,23.39137z"/>
+                                          <path stroke="null" stroke-width="1.0000000pt" fill-rule="evenodd" fill="url(#linearGradient837)"  id="path832" d="m24.45805,83.89588c-1.3308,0.64668 0.63526,-42.70722 -0.35829,-44.48624c-1.19829,-1.77901 -10.79994,4.28426 -14.5876,1.80532c-0.20474,-1.0778 14.74116,-23.92718 30.71074,-22.41826c-9.6227,12.50249 -13.51273,54.53673 -15.76485,65.09918z"/>
+                                         </g>
+                                        </g></svg> 
+                                      </a> 
+                                </button>
+                            </td> 
+                            <td align="right">
+                                <button type="button">
+                                      <a href="javascript:void(0);"><svg width="103.33333" height="73.33333" xmlns="http://www.w3.org/2000/svg" xmlns:undefined="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:undefined="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <defs id="defs550">
+                                         <linearGradient id="linearGradient834">
+                                          <stop stop-opacity="0.4" stop-color="#ffffff" id="stop835" offset="0"/>
+                                          <stop stop-opacity="0.1" stop-color="#ffffff" id="stop836" offset="1"/>
+                                         </linearGradient>
+                                         <linearGradient id="linearGradient837" xlink:href="#linearGradient834"/>
+                                        </defs>Clipart by Nicu Buculei - arrow08_4Nicu Buculei
+                                        <g>
+                                         <title>Переход на следующую страницу</title>
+                                         <desk>Перейти на следующую страницу</desk>
+                                         <g stroke="null" id="g843">
+                                          <path stroke="null" fill="#000000" stroke-width="3.75" fill-rule="evenodd" fill-opacity="0.25"  id="path833" d="m61.74227,11.8018c-0.13089,0.0047 -0.23998,0.02698 -0.33321,0.06586c-2.98327,1.24405 1.60356,14.92604 1.60356,14.92604c0,0 -46.58305,-0.82973 -48.64839,0.20698c-2.06534,1.03671 -2.07575,25.0568 -0.01041,26.09351c2.06534,1.03671 48.6536,0.20698 48.6536,0.20698c0,0 -4.59204,13.68668 -1.60877,14.93074c2.91913,1.21731 24.93939,-14.63943 25.24052,-27.75405l0.01041,0c0.0148,-0.28529 0.00141,-0.5727 -0.00521,-0.86085c-0.29151,-12.69579 -20.93455,-27.95752 -24.9021,-27.81521z"/>
+                                          <path stroke="#000000" stroke-linejoin="round" stroke-width="10" fill-rule="evenodd" fill="#0000ff"  id="path831" d="m59.82188,11.061c-0.13089,0.0047 -0.23998,0.02698 -0.33321,0.06586c-2.98327,1.24405 1.60356,14.92604 1.60356,14.92604c0,0 -46.58305,-0.82973 -48.64839,0.20698c-2.06534,1.03671 -2.07575,25.0568 -0.01041,26.09351c2.06534,1.03671 48.6536,0.20698 48.6536,0.20698c0,0 -4.59204,13.68668 -1.60877,14.93074c2.91913,1.21731 24.93939,-14.63943 25.24052,-27.75405l0.01041,0c0.0148,-0.28529 0.00141,-0.5727 -0.00521,-0.86085c-0.29151,-12.69579 -20.93455,-27.95752 -24.9021,-27.81521z"/>
+                                          <path stroke="null" stroke-width="1.0000000pt" fill-rule="evenodd" fill="url(#linearGradient837)"  id="path832" d="m13.36021,27.50516c-1.37689,2.69545 -2.52431,17.83143 0.68845,23.63701c1.14741,0.20734 10.3267,-11.40382 38.55301,-10.15977c-26.61994,-3.11013 -39.24146,-13.47724 -39.24146,-13.47724z"/>
+                                         </g>
+                                        </g></svg>   
+                                      </a>                
+                                </button>
+                            </td>    
+                        </tr>
+                    </table>
+    </body>
+</html>
