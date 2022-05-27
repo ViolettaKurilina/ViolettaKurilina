@@ -46,9 +46,9 @@
                 <form id="form_3" name="Form_2_1" action="http://fe.it-academy.by/TestForm.php" method="get">
                     <fieldset>
                         <legend>Авторизируйтесь</legend>
-                        <INPUT TYPE="login" NAME="login" required>
+                        <INPUT TYPE="login" NAME="login" id="log" required>
                         <LABEL FOR="log"><sup>*</sup>Логин</LABEL><br>
-                        <INPUT TYPE="password" NAME="password"required>
+                        <INPUT TYPE="password" NAME="password" id="passwd" required>
                         <LABEL FOR="passwd"><sup>*</sup>Пароль</LABEL><br>
                         <label>
                             <input type="checkbox" name="val_1"
@@ -84,9 +84,9 @@
                 <form id="form_5" name="Form_3_1" action="http://fe.it-academy.by/TestForm.php" method="post">
                     <fieldset>
                         <legend>Отавьте ваш отзыв:</legend>
-                        <INPUT TYPE="Name_1" NAME="Name_1" required>
+                        <INPUT TYPE="Name_1" NAME="Name_1" id="Name_1" required>
                         <LABEL FOR="Name_1"><sup>*</sup>Имя</LABEL><br>
-                        <INPUT TYPE="email" NAME="email" pattern="(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})" required>
+                        <INPUT TYPE="email" NAME="email" id="email" pattern="(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})" required>
                         <LABEL FOR="email"><sup>*</sup>e-mail</LABEL><br>
                         <textarea name="text_area" lang="ru">Форма отправки</textarea><br>
                         <input type="submit"><br>
