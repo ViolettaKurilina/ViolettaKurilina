@@ -7,15 +7,15 @@
     <title>Document</title>
   <style>
        div.MenuLevel1 {width: 100px}
-       div.MenuLevel1 > div {background-color:grey; border: solid black 1px; height: 20px; position: relative; cursor: pointer}
-       div.MenuLevel2 {width: 100px; opacity:0; transition: .5s}
+       div.MenuLevel1 > div {background-color:grey; border: solid black 1px; height: 20px; cursor: pointer; position: relative;}
+       div.MenuLevel2 {width: 100px; opacity:0; transition: 1s}
        div.MenuLevel2 > div {background-color: rgb(93, 239, 239); border: solid black 1px;cursor: pointer}
-       div.MenuLevel1 > div:hover div.MenuLevel2 {position: absolute; top: 0%; left: 100%; z-index: 1; opacity: 1}
+       div.MenuLevel1 > div:hover div.MenuLevel2 {position:absolute; top: 0%; margin-left:100px; z-index: 1; opacity: 1}
     @media all and (min-width: 730px) {
         div.MenuLevel1 {width: 100%}
         div.MenuLevel1 > div {width: 100px}
         div.MenuLevel1 > div {float: left}
-        div.MenuLevel1 > div:hover div.MenuLevel2 {top:100%; left:0%}
+        div.MenuLevel1 > div:hover div.MenuLevel2 {margin-left:0; margin-top: 22px; left:0%}
           }
   </style>
 </head>
