@@ -7,10 +7,10 @@
     <title>Document</title>
   <style>
         div.MenuLevel1 { height: 150px}
-        div.MenuLevel1 > div {width: 100px; background-color:grey; border: solid black 1px; position: relative; cursor: pointer}
+        div.MenuLevel1 > div {width: 100px; background-color:grey; border: solid black 1px; position: relative; cursor: pointer; border-radius: 4px}
         div.MenuLevel1 > div {float: left}
         div.MenuLevel2 { width: 100px; display: none }
-        div.MenuLevel2 > div { background-color: rgb(93, 239, 239); border: solid black 1px;cursor: pointer}
+        div.MenuLevel2 > div { background-color: rgb(93, 239, 239); border: solid black 1px;cursor: pointer; border-radius: 4px}
         div.MenuLevel1 > div:hover div.MenuLevel2 {display: block; position: absolute; top: 100%; z-index: 1}
      @media all and (max-width: 628px) {
         div.MenuLevel1 { width: 100px}
