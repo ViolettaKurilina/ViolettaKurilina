@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <Form id="my_form" name="user" method="get" action ="form.php">
+        <fieldset>
+           <legend><h1> Проверка пароля</h1></legend>
+             <fieldset>
+               <Label><input type="text" id="text1">*Пароль</Label><br>
+               <Label><input type="text" id="text2">*Повторите пароль</Label><br>
+               <br>
+               <input type="submit"><br>
+             </fieldset>
+        </fieldset>
+    </Form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+     <script>
+        $(document).ready(function($){
+            $("#text2").css({'borderRadius': '3px', 'margin-top':'8px'})
+            $("input[type=text]").focus(function(){
+                $(this).css('border','3px solid blue')
+            }).blur(function(){
+                $(this).css('border','1px solid black')
+            })
+            $("#text1").keypress(function(){
+                $('#text1, #text2').css('backgroundColor', 'green') 
+            })
+           $('#text2,#text1').keyup(check);
+           function check(){
+            if($('#text1').val() == $('#text2').val()){
+                $('#text1, #text2').css('backgroundColor', 'green');
+             }
+            else if($('#text2').val() !== '' && $('#text1').val() != $('#text2').val()){
+                $('#text1, #text2').css('backgroundColor', 'red'); 
+             }
+           }
+        });
+     </script>
+</body>
+</html>
