@@ -16,7 +16,7 @@
             <th>Данные 01</th>
             <th>Данные 02</th>          
         </tr>
-        <tr class="even">
+        <tr>
             <th>Иванов Иван Иванович</th>
             <td>М</td>
             <td>начальник</td>
@@ -24,7 +24,7 @@
             <td>4567</td>
             <td>3453</td>
         </tr>
-        <tr class="add">
+        <tr>
             <th>Петрова Илонна Петровна</th>
             <td>Ж</td>
             <td>секретарь</td>
@@ -32,7 +32,7 @@
             <td>98795</td>
             <td>46523</td>
         </tr>
-        <tr class="even">
+        <tr>
             <th>Сидоров Илья Игоревич</th>
             <td>М</td>
             <td>бухгалтер</td>
@@ -40,7 +40,7 @@
             <td>743434</td>
             <td>987979</td>
         </tr>
-        <tr class="add">
+        <tr>
             <th>Пупин Фёдор Фёдорович</th>
             <td>М</td>
             <td>водитель</td>
@@ -48,7 +48,7 @@
             <td>74323434</td>
             <td>9232379</td>
         </tr>
-        <tr class="even">
+        <tr>
             <th>Крупин Сергей Иванович</th>
             <td>М</td>
             <td>водитель 2</td>
@@ -64,14 +64,11 @@
      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
      <script>
         $(document).ready(function($){
-             $(".add > th").css('textAlign','left')
-             $(".add > td").css('textAlign','center')
+             $('tr:nth-child(2n+1):not(:first-child)').css({'backgroundColor':'rgb(215, 213, 213)','borderStyle':'dotted', 'borderWidth':'1px'})
+             $ (".one > th").css({'backgroundColor':'grey', 'color' : 'white'})
+             $('th:not(.one>th)').css('textAlign','left')
+             $('td').css({'borderStyle':'dotted', 'borderWidth':'0.5px', 'text-align': 'center'})
              $("#tab").css({'borderCollapse': 'collapse', 'borderStyle':'dotted', 'borderWidth':'3px', 'width': '100%','borderColor': 'black'})
-             $("#tab .add").css({'backgroundColor':'rgb(215, 213, 213)','borderStyle':'dotted', 'borderWidth':'1px'})
-             $("#tab .one").css({'backgroundColor':'grey', 'color' : 'white'})
-             $("td").css({'borderStyle':'dotted', 'borderWidth':'0.5px'})
-             $(".even > th").css('textAlign','left')
-             $(".even > td").css('textAlign','center')
              $("div").css({'width': '100%','height':'auto','textAlign':'center', 'color': 'grey'})
              $("button").css({'backgroundColor':'blue', 'color':'white', 'borderRadius': '5px', 'height':'30px'})
              $("button").click(function(){
